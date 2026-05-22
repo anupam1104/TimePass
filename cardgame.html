@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Pass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color : #de77e6;
+            align-items: center;
+        }
+        h1 {
+            color: #ffffff;
+            align-items: center;
+            text-align: center;
+        }
+        p{
+            color: #121212;
+            align-items: center;
+            text-align: center;
+        }
+        h2{
+            color: #0c0c0c;
+            align-items: center;
+            text-align: center;
+        }
+        
+        ul{
+            color: #111111;
+            align-items: center;
+            /*text-align: center;*/
+            /*list-s*/
+        }
+        .logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 100px;
+            width: 100px;
+            align-items: center;
+            border-radius: 50px;
+        }
+        .logocontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            border-radius: 50px;
+            margin: 0px;
+        }
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-content: center;
+            
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card{
+            background: linear-gradient(to left, rgb(166, 2, 242), rgba(150, 2, 241, 0.5));
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+        .card p {
+            color: #ffffff;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <div logocontainer>
+            <img src="logo.jpeg" alt="TimePass Logo" class="logo">
+        </div>
+        <h1>TimePass Arcade</h1>
+        <h2>Enjoy a variety of games to pass the time!</h2>
+        <div class="game-container">
+            <div class="card" onclick="openGame('cards')">
+                <h3>Card Game</h3>
+                <p>Play a simple card game against the computer.</p>                
+            </div>
+            <div class="card" onclick="openGame('slither')">
+                <h3>Slither.io</h3>
+                <p>Play the popular snake game!</p>
+            </div>
+            <div class="card" onclick="openGame('2048')">
+                <h3>2048</h3>
+                <p>Try to reach the 2048 tile!</p>
+            </div>
+            <div class="card" onclick="openGame('chess')">
+                <h3>Chess</h3>
+                <p>Play a game of chess against a friend or the computer.</p>
+            </div>    
+        </div>
+        
+
+        <script>
+            const routes = {
+                //
+                cards: "https://cardgames.io/war/",
+                chess: "https://lichess.org/quick",
+                //
+                slither: "https://slither.io/",
+                "2048": "https://play2048.co/"
+            };
+
+            function openGame(game) {
+                if (routes[game].startsWith("http")) {
+                window.open(routes[game], "_blank"); // external → new tab
+            }
+            
+    }
+            </script>
+
+
+    </body>
+</html>
